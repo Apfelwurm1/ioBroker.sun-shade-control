@@ -41,6 +41,7 @@
     "mocha": "^10.4.0"
   },
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "deploy": "git add . && git commit -m \"Automatic update\" && git push"
   }
 }
