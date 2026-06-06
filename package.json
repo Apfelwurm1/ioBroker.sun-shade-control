@@ -1,0 +1,46 @@
+{
+  "name": "iobroker.sun-shade-control",
+  "version": "0.1.0",
+  "description": "Sun position based shading and venetian blind slat tracking control",
+  "author": "Bengel.Bytes / Vollbrause Haus & Hof",
+  "homepage": "https://github.com/markus/ioBroker.sun-shade-control",
+  "license": "MIT",
+  "keywords": [
+    "ioBroker",
+    "shading",
+    "shutter",
+    "blind",
+    "venetian",
+    "raffstore",
+    "sun",
+    "solar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markus/ioBroker.sun-shade-control.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "main": "main.js",
+  "files": [
+    "admin{,/build}/**/*",
+    "admin/jsonConfig.json",
+    "admin/words.js",
+    "lib/",
+    "LICENSE",
+    "io-package.json",
+    "main.js"
+  ],
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.1.4",
+    "suncalc": "^1.9.0"
+  },
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "mocha": "^10.4.0"
+  },
+  "scripts": {
+    "test": "mocha test"
+  }
+}

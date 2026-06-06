@@ -1,0 +1,457 @@
+{
+  "i18n": true,
+  "type": "tabs",
+  "items": {
+    "tabMain": {
+      "type": "panel",
+      "label": "Global Settings",
+      "items": {
+        "signature": {
+          "type": "staticText",
+          "text": {
+            "en": "Developed with ❤️ by Bengel.Bytes by Vollbrause Haus & Hof",
+            "de": "Entwickelt mit ❤️ von Bengel.Bytes by Vollbrause Haus & Hof"
+          },
+          "style": {
+            "fontSize": "12px",
+            "color": "#8f9ca8",
+            "borderBottom": "1px solid rgba(128, 128, 128, 0.2)",
+            "paddingBottom": "8px",
+            "marginBottom": "15px",
+            "fontStyle": "italic",
+            "textAlign": "center"
+          }
+        },
+        "headerMain": {
+          "type": "header",
+          "size": 4,
+          "text": "Location & Calculation settings"
+        },
+        "updateInterval": {
+          "type": "number",
+          "label": "Update Interval (minutes)",
+          "sm": 4,
+          "min": 1,
+          "max": 60,
+          "default": 2
+        },
+        "latitude": {
+          "type": "text",
+          "label": "Latitude (Breitengrad)",
+          "sm": 4,
+          "default": ""
+        },
+        "longitude": {
+          "type": "text",
+          "label": "Longitude (Längengrad)",
+          "sm": 4,
+          "default": ""
+        },
+        "infoCoords": {
+          "type": "staticText",
+          "text": "Note: Leave Latitude and Longitude empty to automatically use the coordinates configured in the ioBroker system settings.",
+          "style": {
+            "fontStyle": "italic",
+            "color": "gray"
+          }
+        },
+        "headerShading": {
+          "type": "header",
+          "size": 4,
+          "text": "Global Shading Triggers (Optional)"
+        },
+        "tempSensorId": {
+          "type": "objectId",
+          "label": "Temperature Sensor State ID",
+          "sm": 8,
+          "default": ""
+        },
+        "tempThreshold": {
+          "type": "number",
+          "label": "Shading Temp Threshold (°C)",
+          "sm": 4,
+          "min": 0,
+          "max": 50,
+          "default": 23
+        },
+        "luxSensorId": {
+          "type": "objectId",
+          "label": "Brightness Sensor State ID",
+          "sm": 8,
+          "default": ""
+        },
+        "luxThreshold": {
+          "type": "number",
+          "label": "Shading Lux Threshold",
+          "sm": 4,
+          "min": 0,
+          "max": 100000,
+          "default": 20000
+        },
+        "shadingStartDelay": {
+          "type": "number",
+          "label": "Shading Start Delay (minutes)",
+          "sm": 6,
+          "min": 0,
+          "max": 120,
+          "default": 2
+        },
+        "shadingEndDelay": {
+          "type": "number",
+          "label": "Shading End Delay / Cloud Filter (minutes)",
+          "sm": 6,
+          "min": 0,
+          "max": 120,
+          "default": 15
+        },
+        "headerHoliday": {
+          "type": "header",
+          "size": 4,
+          "text": "Holiday & Vacation Settings (Optional)"
+        },
+        "holidaySensorId": {
+          "type": "objectId",
+          "label": "Holiday/Vacation State ID",
+          "sm": 8,
+          "default": ""
+        },
+        "useWeekendOnHoliday": {
+          "type": "checkbox",
+          "label": "Use Weekend Settings on Holidays",
+          "sm": 4,
+          "default": true
+        },
+        "headerSafety": {
+          "type": "header",
+          "size": 4,
+          "text": "Safety & Protection Triggers"
+        },
+        "fireSensorId": {
+          "type": "objectId",
+          "label": "Fire Alarm State ID (e.g. Rauchmelder)",
+          "sm": 12,
+          "default": ""
+        },
+        "windSensorId": {
+          "type": "objectId",
+          "label": "Wind Sensor State ID",
+          "sm": 8,
+          "default": ""
+        },
+        "windThreshold": {
+          "type": "number",
+          "label": "Wind Speed Threshold (Alarm active above)",
+          "sm": 4,
+          "min": 0,
+          "max": 100,
+          "default": 15
+        },
+        "frostStateId": {
+          "type": "objectId",
+          "label": "Frost Protection Warning State ID",
+          "sm": 8,
+          "default": ""
+        },
+        "frostTempThreshold": {
+          "type": "number",
+          "label": "Frost Temp Threshold (°C)",
+          "sm": 4,
+          "min": -20,
+          "max": 10,
+          "default": 0
+        }
+      }
+    },
+    "tabTimes": {
+      "type": "panel",
+      "label": "Zones & Time Settings",
+      "items": {
+        "areas": {
+          "type": "table",
+          "label": "Custom Shading Zones & Times",
+          "items": [
+            {
+              "type": "text",
+              "attr": "id",
+              "title": "Zone ID (e.g. living)",
+              "width": "120px"
+            },
+            {
+              "type": "text",
+              "attr": "name",
+              "title": "Zone Name (e.g. Wohnbereich)",
+              "width": "160px"
+            },
+            {
+              "type": "objectId",
+              "attr": "inBedId",
+              "title": "In-Bed Sensor State ID",
+              "width": "200px"
+            },
+            {
+              "type": "select",
+              "attr": "openType",
+              "title": "Opening Trigger",
+              "options": [
+                {
+                  "value": "sunrise",
+                  "label": "Sunrise"
+                },
+                {
+                  "value": "fixed",
+                  "label": "Fixed Time"
+                },
+                {
+                  "value": "none",
+                  "label": "None"
+                }
+              ],
+              "default": "sunrise",
+              "width": "120px"
+            },
+            {
+              "type": "number",
+              "attr": "sunriseOffset",
+              "title": "Sunrise Offset (min)",
+              "default": 0,
+              "width": "100px",
+              "hidden": "data.openType !== 'sunrise'"
+            },
+            {
+              "type": "text",
+              "attr": "fixedOpenTime",
+              "title": "Fixed Open (HH:MM)",
+              "default": "07:00",
+              "width": "100px",
+              "hidden": "data.openType !== 'fixed'"
+            },
+            {
+              "type": "text",
+              "attr": "minTimeWorkdays",
+              "title": "Earliest Open Workdays (HH:MM)",
+              "default": "06:30",
+              "width": "130px",
+              "hidden": "data.openType !== 'sunrise'"
+            },
+            {
+              "type": "text",
+              "attr": "maxTimeWorkdays",
+              "title": "Latest Open Workdays (HH:MM)",
+              "default": "08:30",
+              "width": "130px",
+              "hidden": "data.openType !== 'sunrise'"
+            },
+            {
+              "type": "text",
+              "attr": "minTimeWeekend",
+              "title": "Earliest Open Weekend (HH:MM)",
+              "default": "07:30",
+              "width": "130px",
+              "hidden": "data.openType !== 'sunrise'"
+            },
+            {
+              "type": "text",
+              "attr": "maxTimeWeekend",
+              "title": "Latest Open Weekend (HH:MM)",
+              "default": "09:30",
+              "width": "130px",
+              "hidden": "data.openType !== 'sunrise'"
+            },
+            {
+              "type": "select",
+              "attr": "closeType",
+              "title": "Closing Trigger",
+              "options": [
+                {
+                  "value": "sunset",
+                  "label": "Sunset"
+                },
+                {
+                  "value": "fixed",
+                  "label": "Fixed Time"
+                },
+                {
+                  "value": "none",
+                  "label": "None"
+                }
+              ],
+              "default": "sunset",
+              "width": "120px"
+            },
+            {
+              "type": "number",
+              "attr": "sunsetOffset",
+              "title": "Sunset Offset (min)",
+              "default": 0,
+              "width": "100px",
+              "hidden": "data.closeType !== 'sunset'"
+            },
+            {
+              "type": "text",
+              "attr": "fixedCloseTime",
+              "title": "Fixed Close (HH:MM)",
+              "default": "21:00",
+              "width": "100px",
+              "hidden": "data.closeType !== 'fixed'"
+            },
+            {
+              "type": "text",
+              "attr": "closeMinTimeWorkdays",
+              "title": "Earliest Close Workdays (HH:MM)",
+              "default": "17:00",
+              "width": "130px",
+              "hidden": "data.closeType !== 'sunset'"
+            },
+            {
+              "type": "text",
+              "attr": "closeMaxTimeWorkdays",
+              "title": "Latest Close Workdays (HH:MM)",
+              "default": "22:00",
+              "width": "130px",
+              "hidden": "data.closeType !== 'sunset'"
+            },
+            {
+              "type": "text",
+              "attr": "closeMinTimeWeekend",
+              "title": "Earliest Close Weekend (HH:MM)",
+              "default": "18:00",
+              "width": "130px",
+              "hidden": "data.closeType !== 'sunset'"
+            },
+            {
+              "type": "text",
+              "attr": "closeMaxTimeWeekend",
+              "title": "Latest Close Weekend (HH:MM)",
+              "default": "23:00",
+              "width": "130px",
+              "hidden": "data.closeType !== 'sunset'"
+            }
+          ]
+        }
+      }
+    },
+    "tabDevices": {
+      "type": "panel",
+      "label": "Shading Devices",
+      "items": {
+        "devices": {
+          "type": "table",
+          "label": "Blinds, Raffstores & Shutters",
+          "items": [
+            {
+              "type": "text",
+              "attr": "name",
+              "title": "Device Name",
+              "width": "150px"
+            },
+            {
+              "type": "selectSendTo",
+              "attr": "areaId",
+              "title": "Zone ID",
+              "width": "150px",
+              "command": "getZones",
+              "alsoDependsOn": ["areas"],
+              "default": "global"
+            },
+            {
+              "type": "select",
+              "attr": "type",
+              "title": "Type",
+              "options": [
+                {
+                  "value": "shutter",
+                  "label": "Roller Shutter (Rolladen)"
+                },
+                {
+                  "value": "venetian",
+                  "label": "Venetian Blind (Raffstore)"
+                }
+              ],
+              "width": "180px",
+              "default": "shutter"
+            },
+            {
+              "type": "number",
+              "attr": "facadeAzimuth",
+              "title": "Facade Orientation (0-360°)",
+              "width": "120px",
+              "default": 180
+            },
+            {
+              "type": "checkbox",
+              "attr": "enabled",
+              "title": "Enabled",
+              "width": "80px",
+              "default": true
+            },
+            {
+              "type": "objectId",
+              "attr": "stateHeight",
+              "title": "State ID Height/Pos",
+              "width": "200px"
+            },
+            {
+              "type": "objectId",
+              "attr": "stateTilt",
+              "title": "State ID Slat/Tilt (Raffstore only)",
+              "width": "200px",
+              "hidden": "data.type !== 'venetian'"
+            },
+            {
+              "type": "checkbox",
+              "attr": "invertHeight",
+              "title": "Invert Height (0% = Closed)",
+              "width": "120px",
+              "default": false
+            },
+            {
+              "type": "checkbox",
+              "attr": "invertTilt",
+              "title": "Invert Tilt",
+              "width": "100px",
+              "default": false,
+              "hidden": "data.type !== 'venetian'"
+            },
+            {
+              "type": "number",
+              "attr": "slatWidth",
+              "title": "Slat Width L (mm)",
+              "width": "100px",
+              "default": 80,
+              "hidden": "data.type !== 'venetian'"
+            },
+            {
+              "type": "number",
+              "attr": "slatSpacing",
+              "title": "Slat Spacing d (mm)",
+              "width": "100px",
+              "default": 72,
+              "hidden": "data.type !== 'venetian'"
+            },
+            {
+              "type": "number",
+              "attr": "shadingHeight",
+              "title": "Shading Height (%)",
+              "width": "120px",
+              "default": 80
+            },
+            {
+              "type": "objectId",
+              "attr": "contactId",
+              "title": "Window Contact State ID",
+              "width": "200px"
+            },
+            {
+              "type": "number",
+              "attr": "contactOpenPos",
+              "title": "Safety Height Open (%)",
+              "width": "120px",
+              "default": 100,
+              "hidden": "!data.contactId"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

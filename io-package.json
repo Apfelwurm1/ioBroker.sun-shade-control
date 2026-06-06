@@ -1,0 +1,152 @@
+{
+  "common": {
+    "name": "sun-shade-control",
+    "version": "0.1.0",
+    "title": "Sun Shade Control (Bengel.Bytes)",
+    "titleLang": {
+      "en": "Sun Shade Control (Bengel.Bytes)",
+      "de": "Sonnenstand-Rolladen- und Raffstoresteuerung (Bengel.Bytes)",
+      "ru": "Управление солнцезащитными шторами",
+      "pt": "Controle de proteção solar",
+      "nl": "Zonwering controle",
+      "fr": "Contrôle des pare-soleil",
+      "it": "Controllo protezione solare",
+      "es": "Control de protección solar",
+      "pl": "Sterowanie osłonami przeciwsłonecznymi",
+      "uk": "Керування сонцезахисними шторами",
+      "zh-cn": "遮阳帘控制"
+    },
+    "desc": {
+      "en": "Sun position based shading and venetian blind slat tracking control",
+      "de": "Sonnenstandsabhängige Rolladen- und Raffstoresteuerung mit Lamellennachführung",
+      "ru": "Управление шторами и жалюзи в зависимости od положения солнца",
+      "pt": "Controle de persianas e venezianas baseado na posição solar",
+      "nl": "Zonwering en lamellen aansturing op basis von zonnestand",
+      "fr": "Contrôle des volets et des brise-soleil orientables selon la position du soleil",
+      "it": "Controllo di tapparelle e veneziane basato sulla posizione solare",
+      "es": "Control de persianas y venecianas baseado en la posición solar",
+      "pl": "Sterowanie roletami i żaluzjami w zależności od pozycji słońca",
+      "uk": "Керування ролетами та жалюзі на основі положення сонця",
+      "zh-cn": "基于太阳位置的卷帘 and 百叶窗控制"
+    },
+    "platform": "Javascript/Node.js",
+    "mode": "daemon",
+    "icon": "sun-shade-control.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/markus/ioBroker.sun-shade-control/main/admin/sun-shade-control.png",
+    "type": "climate-control",
+    "keywords": [
+      "shading",
+      "shutter",
+      "blind",
+      "venetian",
+      "raffstore",
+      "sun",
+      "solar"
+    ],
+    "authors": [
+      "Bengel.Bytes",
+      "Vollbrause Haus & Hof"
+    ],
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.0"
+      }
+    ],
+    "adminUI": {
+      "config": "json"
+    }
+  },
+  "native": {
+    "updateInterval": 2,
+    "latitude": "",
+    "longitude": "",
+    "tempSensorId": "",
+    "tempThreshold": 23,
+    "luxSensorId": "",
+    "luxThreshold": 20000,
+    "windSensorId": "",
+    "windThreshold": 15,
+    "fireSensorId": "",
+    "areas": [],
+    "holidaySensorId": "",
+    "useWeekendOnHoliday": true,
+    "frostTempThreshold": 0,
+    "frostStateId": "",
+    "shadingStartDelay": 2,
+    "shadingEndDelay": 15,
+    "devices": []
+  },
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "sun",
+      "type": "channel",
+      "common": {
+        "name": "Solar position info"
+      },
+      "native": {}
+    },
+    {
+      "_id": "sun.azimuth",
+      "type": "state",
+      "common": {
+        "name": "Solar Azimuth",
+        "role": "value.gps.azimuth",
+        "type": "number",
+        "unit": "°",
+        "read": true,
+        "write": false,
+        "def": 0
+      },
+      "native": {}
+    },
+    {
+      "_id": "sun.elevation",
+      "type": "state",
+      "common": {
+        "name": "Solar Elevation",
+        "role": "value.gps.elevation",
+        "type": "number",
+        "unit": "°",
+        "read": true,
+        "write": false,
+        "def": 0
+      },
+      "native": {}
+    },
+    {
+      "_id": "sun.lastUpdate",
+      "type": "state",
+      "common": {
+        "name": "Last Calculation Time",
+        "role": "date",
+        "type": "string",
+        "read": true,
+        "write": false,
+        "def": ""
+      },
+      "native": {}
+    }
+  ]
+}
