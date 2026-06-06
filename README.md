@@ -1,4 +1,4 @@
-# ioBroker.sun-shade-control (Bengel.Bytes by Vollbrause Haus & Hof)
+# ioBroker.sun-shade-control
 
 [![NPM version](https://img.shields.io/npm/v/iobroker.sun-shade-control.svg)](https://www.npmjs.com/package/iobroker.sun-shade-control)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.sun-shade-control.svg)](https://www.npmjs.com/package/iobroker.sun-shade-control)
