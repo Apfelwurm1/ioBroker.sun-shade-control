@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sun-shade-control",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "title": "Sun Shade Control (Bengel.Bytes)",
     "titleLang": {
       "en": "Sun Shade Control (Bengel.Bytes)",
@@ -19,15 +19,15 @@
     "desc": {
       "en": "Sun position based shading and venetian blind slat tracking control",
       "de": "Sonnenstandsabhängige Rolladen- und Raffstoresteuerung mit Lamellennachführung",
-      "ru": "Управление шторами и жалюзи в зависимости od положения солнца",
+      "ru": "Управление шторами und жалюзи в зависимости от положения солнца",
       "pt": "Controle de persianas e venezianas baseado na posição solar",
-      "nl": "Zonwering en lamellen aansturing op basis von zonnestand",
+      "nl": "Zonwering en lamellen aansturing op basis van zonnestand",
       "fr": "Contrôle des volets et des brise-soleil orientables selon la position du soleil",
       "it": "Controllo di tapparelle e veneziane basato sulla posizione solare",
       "es": "Control de persianas y venecianas baseado en la posición solar",
       "pl": "Sterowanie roletami i żaluzjami w zależności od pozycji słońca",
-      "uk": "Керування ролетами та жалюзі на основі положення сонця",
-      "zh-cn": "基于太阳位置的卷帘 and 百叶窗控制"
+      "uk": "Керування ролетами та жалюзі на основі положения сонця",
+      "zh-cn": "基于太阳位置的卷帘和百叶窗控制"
     },
     "platform": "Javascript/Node.js",
     "mode": "daemon",

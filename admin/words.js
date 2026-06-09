@@ -331,5 +331,29 @@ const systemDictionary = {
   "Frost Temp Threshold (°C)": {
     "en": "Frost Temp Threshold (°C)",
     "de": "Frost Temperaturschwelle (°C)"
+  },
+  "Note: The Frost Temp Threshold uses the Temperature Sensor State ID configured in 'Global Shading Triggers' above.": {
+    "en": "Note: The Frost Temp Threshold uses the Temperature Sensor State ID configured in 'Global Shading Triggers' above.",
+    "de": "Hinweis: Die Frost-Temperaturschwelle verwendet den Außentemperatursensor aus 'Globale Beschattungsauslöser' (oben)."
+  },
+  "Sunrise": {
+    "en": "Sunrise",
+    "de": "Sonnenaufgang"
+  },
+  "Fixed Time": {
+    "en": "Fixed Time",
+    "de": "Festzeit"
+  },
+  "None": {
+    "en": "None",
+    "de": "Keine"
+  },
+  "Sunset": {
+    "en": "Sunset",
+    "de": "Sonnenuntergang"
+  },
+  "Facade Orientation (0-360°)": {
+    "en": "Facade Orientation (0-360°)",
+    "de": "Ausrichtung der Fassade (0-360°)"
   }
 };

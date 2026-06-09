@@ -50,6 +50,7 @@
         "infoCoords": {
           "type": "staticText",
           "text": "Note: Leave Latitude and Longitude empty to automatically use the coordinates configured in the ioBroker system settings.",
+          "sm": 12,
           "style": {
             "fontStyle": "italic",
             "color": "gray"
@@ -158,7 +159,17 @@
           "sm": 4,
           "min": -20,
           "max": 10,
-          "default": 0
+          "default": 0,
+          "tooltip": "Uses the Temperature Sensor configured above (Global Shading Triggers). If the measured temperature is at or below this threshold, frost protection activates."
+        },
+        "infoFrost": {
+          "type": "staticText",
+          "text": "Note: The Frost Temp Threshold uses the Temperature Sensor State ID configured in 'Global Shading Triggers' above.",
+          "sm": 12,
+          "style": {
+            "fontStyle": "italic",
+            "color": "gray"
+          }
         }
       }
     },
@@ -214,6 +225,8 @@
               "attr": "sunriseOffset",
               "title": "Sunrise Offset (min)",
               "default": 0,
+              "min": -120,
+              "max": 120,
               "width": "100px",
               "hidden": "data.openType !== 'sunrise'"
             },
@@ -283,6 +296,8 @@
               "attr": "sunsetOffset",
               "title": "Sunset Offset (min)",
               "default": 0,
+              "min": -120,
+              "max": 120,
               "width": "100px",
               "hidden": "data.closeType !== 'sunset'"
             },
@@ -375,7 +390,9 @@
               "attr": "facadeAzimuth",
               "title": "Facade Orientation (0-360°)",
               "width": "120px",
-              "default": 180
+              "default": 180,
+              "min": 0,
+              "max": 360
             },
             {
               "type": "checkbox",
@@ -433,7 +450,9 @@
               "attr": "shadingHeight",
               "title": "Shading Height (%)",
               "width": "120px",
-              "default": 80
+              "default": 80,
+              "min": 0,
+              "max": 100
             },
             {
               "type": "objectId",
@@ -447,6 +466,8 @@
               "title": "Safety Height Open (%)",
               "width": "120px",
               "default": 100,
+              "min": 0,
+              "max": 100,
               "hidden": "!data.contactId"
             }
           ]

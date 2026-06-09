@@ -1,6 +1,6 @@
 {
   "name": "iobroker.sun-shade-control",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sun position based shading and venetian blind slat tracking control",
   "author": "Bengel.Bytes / Vollbrause Haus & Hof",
   "homepage": "https://github.com/markus/ioBroker.sun-shade-control",
