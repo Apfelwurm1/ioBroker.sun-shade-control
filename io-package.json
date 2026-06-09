@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "sun-shade-control",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "title": "Sun Shade Control (Bengel.Bytes)",
     "titleLang": {
       "en": "Sun Shade Control (Bengel.Bytes)",
@@ -19,15 +19,15 @@
     "desc": {
       "en": "Sun position based shading and venetian blind slat tracking control",
       "de": "Sonnenstandsabhängige Rolladen- und Raffstoresteuerung mit Lamellennachführung",
-      "ru": "Управление шторами und жалюзи в зависимости от положения солнца",
+      "ru": "Управление шторами и жалюзи в зависимости od положения солнца",
       "pt": "Controle de persianas e venezianas baseado na posição solar",
       "nl": "Zonwering en lamellen aansturing op basis van zonnestand",
       "fr": "Contrôle des volets et des brise-soleil orientables selon la position du soleil",
       "it": "Controllo di tapparelle e veneziane basato sulla posizione solare",
-      "es": "Control de persianas y venecianas baseado en la posición solar",
+      "es": "Control de persianas y venecianas basado en la posición solar",
       "pl": "Sterowanie roletami i żaluzjami w zależności od pozycji słońca",
-      "uk": "Керування ролетами та жалюзі на основі положения сонця",
-      "zh-cn": "基于太阳位置的卷帘和百叶窗控制"
+      "uk": "Керування ролетами та жалюзі на основі положення сонця",
+      "zh-cn": "基于太阳位置的卷帘 und百叶窗控制"
     },
     "platform": "Javascript/Node.js",
     "mode": "daemon",
@@ -68,13 +68,37 @@
     "windSensorId": "",
     "windThreshold": 15,
     "fireSensorId": "",
-    "areas": [],
+    "areas": [
+      {
+        "id": "global",
+        "name": "Global / Standard",
+        "inBedId": "",
+        "openType": "sunrise",
+        "sunriseOffset": 0,
+        "fixedOpenTime": "07:00",
+        "minTimeWorkdays": "06:30",
+        "maxTimeWorkdays": "08:30",
+        "minTimeWeekend": "07:30",
+        "maxTimeWeekend": "09:30",
+        "closeType": "sunset",
+        "sunsetOffset": 0,
+        "fixedCloseTime": "21:00",
+        "closeMinTimeWorkdays": "17:00",
+        "closeMaxTimeWorkdays": "22:00",
+        "closeMinTimeWeekend": "18:00",
+        "closeMaxTimeWeekend": "23:00"
+      }
+    ],
     "holidaySensorId": "",
     "useWeekendOnHoliday": true,
     "frostTempThreshold": 0,
     "frostStateId": "",
     "shadingStartDelay": 2,
     "shadingEndDelay": 15,
+    "rainSensorId": "",
+    "presenceSensorId": "",
+    "awayAction": "none",
+    "windAlarmEndDelay": 5,
     "devices": []
   },
   "instanceObjects": [

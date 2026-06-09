@@ -108,7 +108,7 @@
         "headerHoliday": {
           "type": "header",
           "size": 4,
-          "text": "Holiday & Vacation Settings (Optional)"
+          "text": "Holiday & Presence Settings (Optional)"
         },
         "holidaySensorId": {
           "type": "objectId",
@@ -121,6 +121,36 @@
           "label": "Use Weekend Settings on Holidays",
           "sm": 4,
           "default": true
+        },
+        "presenceSensorId": {
+          "type": "objectId",
+          "label": "Presence Sensor State ID (Active = Present)",
+          "sm": 8,
+          "default": ""
+        },
+        "awayAction": {
+          "type": "select",
+          "label": "Action when Away (Presence = false)",
+          "sm": 4,
+          "options": [
+            {
+              "value": "none",
+              "label": "None (No Action)"
+            },
+            {
+              "value": "closeAll",
+              "label": "Close All Devices"
+            },
+            {
+              "value": "lockClosed",
+              "label": "Lock Closed"
+            },
+            {
+              "value": "lockOpen",
+              "label": "Lock Open"
+            }
+          ],
+          "default": "none"
         },
         "headerSafety": {
           "type": "header",
@@ -147,6 +177,20 @@
           "max": 100,
           "default": 15
         },
+        "windAlarmEndDelay": {
+          "type": "number",
+          "label": "Wind Alarm Reset Delay (minutes)",
+          "sm": 4,
+          "min": 0,
+          "max": 120,
+          "default": 5
+        },
+        "rainSensorId": {
+          "type": "objectId",
+          "label": "Rain Sensor State ID (Active = Rain)",
+          "sm": 8,
+          "default": ""
+        },
         "frostStateId": {
           "type": "objectId",
           "label": "Frost Protection Warning State ID",
@@ -170,6 +214,23 @@
             "fontStyle": "italic",
             "color": "gray"
           }
+        },
+        "headerSimulation": {
+          "type": "header",
+          "size": 4,
+          "text": "Simulation & Status"
+        },
+        "btnGetStatus": {
+          "type": "sendTo",
+          "label": "Show Device Statuses",
+          "command": "getDeviceStatuses",
+          "sm": 6
+        },
+        "btnSimulation": {
+          "type": "sendTo",
+          "label": "Run Shading Simulation",
+          "command": "runSimulation",
+          "sm": 6
         }
       }
     },
@@ -395,6 +456,24 @@
               "max": 360
             },
             {
+              "type": "number",
+              "attr": "minElevation",
+              "title": "Min Elevation Angle (°)",
+              "width": "100px",
+              "default": 5,
+              "min": -20,
+              "max": 90
+            },
+            {
+              "type": "number",
+              "attr": "azimuthTolerance",
+              "title": "Azimuth Tolerance (°)",
+              "width": "120px",
+              "default": 90,
+              "min": 10,
+              "max": 90
+            },
+            {
               "type": "checkbox",
               "attr": "enabled",
               "title": "Enabled",
@@ -427,6 +506,26 @@
               "title": "Invert Tilt",
               "width": "100px",
               "default": false,
+              "hidden": "data.type !== 'venetian'"
+            },
+            {
+              "type": "number",
+              "attr": "minTiltPercent",
+              "title": "Min Tilt Slat (%)",
+              "width": "100px",
+              "default": 0,
+              "min": 0,
+              "max": 100,
+              "hidden": "data.type !== 'venetian'"
+            },
+            {
+              "type": "number",
+              "attr": "maxTiltPercent",
+              "title": "Max Tilt Slat (%)",
+              "width": "100px",
+              "default": 100,
+              "min": 0,
+              "max": 100,
               "hidden": "data.type !== 'venetian'"
             },
             {
@@ -469,6 +568,27 @@
               "min": 0,
               "max": 100,
               "hidden": "!data.contactId"
+            },
+            {
+              "type": "select",
+              "attr": "rainAction",
+              "title": "Rain Protection Action",
+              "options": [
+                {
+                  "value": "none",
+                  "label": "None (No Action)"
+                },
+                {
+                  "value": "open",
+                  "label": "Open / Raise"
+                },
+                {
+                  "value": "close",
+                  "label": "Close / Lower"
+                }
+              ],
+              "width": "150px",
+              "default": "none"
             }
           ]
         }

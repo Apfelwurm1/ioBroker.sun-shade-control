@@ -355,5 +355,77 @@ const systemDictionary = {
   "Facade Orientation (0-360°)": {
     "en": "Facade Orientation (0-360°)",
     "de": "Ausrichtung der Fassade (0-360°)"
+  },
+  "Wind Alarm Reset Delay (minutes)": {
+    "en": "Wind Alarm Reset Delay (minutes)",
+    "de": "Windalarm Rücksetzverzögerung (Minuten)"
+  },
+  "Rain Sensor State ID (Active = Rain)": {
+    "en": "Rain Sensor State ID (Active = Rain)",
+    "de": "Datenpunkt Regensensor (Aktiv = Regen)"
+  },
+  "Presence Sensor State ID (Active = Present)": {
+    "en": "Presence Sensor State ID (Active = Present)",
+    "de": "Datenpunkt Anwesenheitssensor (Aktiv = Anwesend)"
+  },
+  "Action when Away (Presence = false)": {
+    "en": "Action when Away (Presence = false)",
+    "de": "Aktion bei Abwesenheit"
+  },
+  "None (No Action)": {
+    "en": "None (No Action)",
+    "de": "Keine Aktion"
+  },
+  "Close All Devices": {
+    "en": "Close All Devices",
+    "de": "Alle Geräte schließen"
+  },
+  "Lock Closed": {
+    "en": "Lock Closed",
+    "de": "Geschlossen sperren"
+  },
+  "Lock Open": {
+    "en": "Lock Open",
+    "de": "Offen sperren"
+  },
+  "Simulation & Status": {
+    "en": "Simulation & Status",
+    "de": "Simulation & Status"
+  },
+  "Show Device Statuses": {
+    "en": "Show Device Statuses",
+    "de": "Gerätestatus anzeigen"
+  },
+  "Run Shading Simulation": {
+    "en": "Run Shading Simulation",
+    "de": "Beschattungssimulation starten"
+  },
+  "Min Elevation Angle (°)": {
+    "en": "Min Elevation Angle (°)",
+    "de": "Mindest-Elevationswinkel (°)"
+  },
+  "Azimuth Tolerance (°)": {
+    "en": "Azimuth Tolerance (°)",
+    "de": "Azimut-Toleranzwinkel (°)"
+  },
+  "Min Tilt Slat (%)": {
+    "en": "Min Tilt Slat (%)",
+    "de": "Min. Lamellenwinkel (%)"
+  },
+  "Max Tilt Slat (%)": {
+    "en": "Max Tilt Slat (%)",
+    "de": "Max. Lamellenwinkel (%)"
+  },
+  "Rain Protection Action": {
+    "en": "Rain Protection Action",
+    "de": "Regenschutz-Aktion"
+  },
+  "Open / Raise": {
+    "en": "Open / Raise",
+    "de": "Öffnen / Auffahren"
+  },
+  "Close / Lower": {
+    "en": "Close / Lower",
+    "de": "Schließen / Abfahren"
   }
 };
